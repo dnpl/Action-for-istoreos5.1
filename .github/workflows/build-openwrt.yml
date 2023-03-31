@@ -8,7 +8,7 @@ on:
 
 jobs:
   Build:
-    name: Build x86-64
+    name: build-openwrt
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
