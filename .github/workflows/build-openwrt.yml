@@ -1,14 +1,17 @@
-name: build-openwrt
+name: Build OpenWrt
 
 on:
-  push:
+  repository_dispatch:
   workflow_dispatch:
-  schedule:
-    - cron: '0 20 * * *'
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
 
 jobs:
   Build:
-    name: build-openwrt
+    name: Build Openwrt
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
