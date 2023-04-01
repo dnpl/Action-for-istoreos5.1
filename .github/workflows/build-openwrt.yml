@@ -52,12 +52,6 @@ jobs:
           make defconfig
           echo -e 'CONFIG_DEVEL=y\nCONFIG_CCACHE=y' >> .config
           make defconfig
-      - name: Make Download
-        run: |
-          cd ./iStoreOS_5.1
-          cp ../.github/workflows/Download.sh .
-          chmod +x Download.sh
-          ./Download.sh
       - name: Check Space
         run: |
           df -h
