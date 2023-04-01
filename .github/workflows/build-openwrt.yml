@@ -51,7 +51,13 @@ jobs:
           cat ../x86-64.config > .config
           make defconfig
           echo -e 'CONFIG_DEVEL=y\nCONFIG_CCACHE=y' >> .config
-          make defconfig
+      - name: Download package
+        run: |
+         cd ./iStoreOS_5.1
+        make download -j8
+        find dl -size -1024c -exec ls -l {} \;
+        find dl -size -1024c -exec rm -f {} \;  make defconfig
+
       - name: Check Space
         run: |
           df -h
