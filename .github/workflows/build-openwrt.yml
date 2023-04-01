@@ -20,7 +20,7 @@ jobs:
         uses: klever1988/cachewrtbuild@main
         with:
           ccache: 'true'
-          prefix: ${{ github.workspace }}/lede
+          prefix: ${{ github.workspace }}/iStoreOS_5.1
       - name: Delete Files
         run: |
           docker rmi `docker images -q`
