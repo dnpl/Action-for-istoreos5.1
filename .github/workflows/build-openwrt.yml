@@ -53,10 +53,10 @@ jobs:
           echo -e 'CONFIG_DEVEL=y\nCONFIG_CCACHE=y' >> .config
       - name: Download package
         run: |
-         cd ./iStoreOS_5.1
-        make download -j8
-        find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;  make defconfig
+          cd ./iStoreOS_5.1
+          make download -j8
+          find dl -size -1024c -exec ls -l {} \;
+          find dl -size -1024c -exec rm -f {} \;  make defconfig
 
       - name: Check Space
         run: |
